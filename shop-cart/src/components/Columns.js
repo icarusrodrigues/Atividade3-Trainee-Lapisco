@@ -24,11 +24,11 @@ function Columns() {
             setFrutas((frutas) => frutas.filter((fruta, index) => index !== props.id));
             setIdFruta(idFruta - 1);
         } else if (type === "Verdura") {
-            setVerduras((verduras) => verduras.filter((verdura, index) => index !== props.key));
+            setVerduras((verduras) => verduras.filter((verdura, index) => index !== props.id));
             setIdVerdura(idVerdura - 1);
         } else if (type === "Carne") {
             setCarnes((carnes) => carnes.filter((carne, index) => index !== props.id));
-            setCarnes(idCarne - 1);
+            setIdCarne(idCarne - 1);
         } else if (type === "Higiene") {
             setHigienes((higienes) => higienes.filter((higiene, index) => index !== props.id));
             setIdHigiene(idHigiene - 1);
