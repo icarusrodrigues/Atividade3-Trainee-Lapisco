@@ -21,17 +21,23 @@ function Columns() {
         let type = props.type;
 
         if (type === "Fruta") {
-            setFrutas(frutas.filter((fruta) => fruta !== frutas[props.id]));
+            setFrutas((frutas) => frutas.filter((fruta, index) => index !== props.id));
+            setIdFruta(idFruta - 1);
         } else if (type === "Verdura") {
-            setVerduras(verduras.filter((verdura) => verdura.props.id !== props.id));
+            setVerduras((verduras) => verduras.filter((verdura, index) => index !== props.key));
+            setIdVerdura(idVerdura - 1);
         } else if (type === "Carne") {
-            setCarnes(carnes.filter((carne) => carne.props.id !== props.id));
+            setCarnes((carnes) => carnes.filter((carne, index) => index !== props.id));
+            setCarnes(idCarne - 1);
         } else if (type === "Higiene") {
-            setHigienes(higienes.filter((higiene) => higiene.props.id !== props.id));
+            setHigienes((higienes) => higienes.filter((higiene, index) => index !== props.id));
+            setIdHigiene(idHigiene - 1);
         } else if (type === "Guloseimas") {
-            setGuloseimas(guloseimas.filter((guloseima) => guloseima.props.id !== props.id));
+            setGuloseimas((guloseimas) => guloseimas.filter((guloseima, index) => index !== props.id));
+            setIdGuloseima(idGuloseima - 1);
         } else {
-            setOutros(outros.filter((outro) => outro.props.id !== props.id));
+            setOutros((outros) => outros.filter((outro, index) => index !== props.id));
+            setIdOutro(idOutro - 1);
         }
     }
 
@@ -47,7 +53,6 @@ function Columns() {
             </div>
         );
     }
-
 
     function AddItem() {
         try {
@@ -117,6 +122,5 @@ function Columns() {
         </>
     );
 }
-
 
 export default Columns;
